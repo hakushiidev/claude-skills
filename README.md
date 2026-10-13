@@ -36,5 +36,5 @@ Hinweise:
   Den Ablauf startet man daher mit `/using-superpowers` oder indem man um Brainstorming/Planung bittet.
 - `diagnosing-superpowers` liest auf Wunsch Sitzungsprotokolle und kann einen Fehlerbericht für obra/superpowers vorbereiten.
 - `planning-with-files` bringt eigene Hooks mit, die nur laufen, solange der Skill aktiv ist; sie lesen und schreiben nur die Plandateien im Projekt.
-- `webapp-testing` braucht Python mit Playwright (`pip install playwright`); in der Cloud ist Chromium vorinstalliert.
+- `webapp-testing` braucht Python mit Playwright. `install.sh` installiert `playwright==1.56.0` (passt zum vorinstallierten Chromium der Cloud), falls es fehlt.
 - Regeln aus der `CLAUDE.md` eines Projekts haben Vorrang vor den Skills.
