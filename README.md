@@ -25,6 +25,8 @@ Lokal funktioniert derselbe Befehl im Terminal.
 | Superpowers – strukturierter Ablauf: `using-superpowers`, `brainstorming`, `writing-plans`, `executing-plans`, `subagent-driven-development`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `requesting-code-review`, `receiving-code-review`, `dispatching-parallel-agents`, `using-git-worktrees`, `finishing-a-development-branch`, `writing-skills`, `diagnosing-superpowers` | [obra/superpowers](https://github.com/obra/superpowers) | `bb92a77` |
 | `webapp-testing` – Browserabläufe mit Playwright testen | [anthropics/skills](https://github.com/anthropics/skills) | `dbd4588` |
 | `planning-with-files` – Plan, Fortschritt und Erkenntnisse in Dateien (`task_plan.md`, `findings.md`, `progress.md`) | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | `ff349eb` |
+| `ui-ux-pro-max` – durchsuchbare Design-Datenbank: Styles, Farbpaletten, Schriftpaare, UX-Regeln, Charts, Hinweise je Stack | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | `4f2dbb6` |
+| WebGL-Animation: `threejs-animation` (Three.js-Szenen, R3F), `shader-glsl` (GLSL-Shader), `particle-system` (Partikel, Flow-Fields, GPU-Points) | [iart-ai/webgl-animation-skills](https://github.com/iart-ai/webgl-animation-skills) | `50697d6` |
 
 Hinweise:
 
@@ -37,4 +39,10 @@ Hinweise:
 - `diagnosing-superpowers` liest auf Wunsch Sitzungsprotokolle und kann einen Fehlerbericht für obra/superpowers vorbereiten.
 - `planning-with-files` bringt eigene Hooks mit, die nur laufen, solange der Skill aktiv ist; sie lesen und schreiben nur die Plandateien im Projekt.
 - `webapp-testing` braucht Python mit Playwright. `install.sh` installiert `playwright==1.56.0` (passt zum vorinstallierten Chromium der Cloud), falls es fehlt.
+- Die WebGL-Skills stammen aus dem Plugin `webgl-animation-skills` und sind hier als reine Skills übernommen (statt `/plugin install`).
+  Die Hilfsskripte aus dem `scripts/`-Ordner des Plugins liegen in jedem der drei Skill-Ordner, damit der Verweis `scripts/…` in den Skills
+  auch nach dem Kopieren funktioniert. `seek-shot.sh` braucht `npx` (Playwright), `contact-sheet.sh` und `probe-mp4.sh` brauchen `ffmpeg`.
+- Aus dem Plugin `ui-ux-pro-max` ist nur der Hauptskill übernommen, nicht die Zusatz-Skills `design`, `design-system`, `brand`, `slides`,
+  `banner-design` und `ui-styling`. Geändert: Die Skriptpfade zeigen statt auf `${CLAUDE_PLUGIN_ROOT}` auf `$HOME/.claude/skills/ui-ux-pro-max/`,
+  und der Testordner `scripts/tests` fehlt. Die Suche braucht nur Python 3, keine weiteren Pakete.
 - Regeln aus der `CLAUDE.md` eines Projekts haben Vorrang vor den Skills.
